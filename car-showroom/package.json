@@ -1,1 +1,1 @@
-{"name":"car-showroom","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test","dev":"vite","build":"vite build","preview":"vite preview"},"devDependencies":{"vite":"latest"}}
+{"name":"car-showroom","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test","dev":"vite","build":"vite build","preview":"vite preview"},"dependencies":{"@supabase/supabase-js":"2.117.2"},"devDependencies":{"vite":"latest"}}
