@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A premium digital showroom demo for modern automotive dealerships." />
+  <title>Northline Motors — Digital Showroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Northline Motors home">
+      <span class="brand-mark">N</span>
+      <span><strong>NORTHLINE</strong><small>MOTORS</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#inventory">Inventory</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-link" href="tel:+201000000000">+20 100 000 0000</a>
+      <a class="header-cta" href="#inventory">Explore Cars</a>
+      <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CURATED AUTOMOTIVE INVENTORY</p>
+        <h1>Drive something<br><em>worth remembering.</em></h1>
+        <p class="hero-text">A refined selection of inspected vehicles, presented with transparent details and a showroom experience built for modern buyers.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#inventory">Browse inventory <span>↗</span></a>
+          <a class="button button-ghost" href="#contact">Talk to a specialist</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image" role="img" aria-label="Premium sports car"></div>
+        <div class="hero-badge"><span>01</span><b>Precision<br>meets presence.</b></div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Showroom benefits">
+      <div><strong>150+</strong><span>vehicles sold</span></div>
+      <div><strong>12</strong><span>years of expertise</span></div>
+      <div><strong>100%</strong><span>verified inventory</span></div>
+      <div><strong>4.9/5</strong><span>client experience</span></div>
+    </section>
+
+    <section class="section inventory-section" id="inventory">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Find your next car.</h2></div>
+        <p>Search a curated inventory and compare the details that matter.</p>
+      </div>
+
+      <div class="inventory-layout">
+        <aside class="filter-panel" aria-label="Inventory filters">
+          <div class="filter-head"><span>Filter inventory</span><button id="clearFilters">Clear</button></div>
+          <label>Search<input id="searchInput" type="search" placeholder="Brand, model, year..." /></label>
+          <label>Body type<select id="bodyFilter"><option value="">All body types</option><option>SUV</option><option>Sedan</option><option>Coupe</option><option>Hatchback</option></select></label>
+          <label>Availability<select id="statusFilter"><option value="">Any status</option><option value="available">Available</option><option value="reserved">Reserved</option><option value="sold">Sold</option></select></label>
+          <div class="price-label"><span>Price</span><span id="priceValue">Up to 5M EGP</span></div>
+          <input id="priceFilter" type="range" min="500000" max="5000000" step="100000" value="5000000" />
+        </aside>
+
+        <div class="inventory-content">
+          <div class="inventory-toolbar"><span id="resultsCount">6 vehicles</span><select id="sortSelect"><option value="featured">Featured</option><option value="newest">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div>
+          <div class="car-grid" id="carGrid"></div>
+          <div class="empty-state" id="emptyState" hidden>No vehicles match those filters.<button class="button button-ghost" id="resetEmpty">Reset filters</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section" id="services">
+      <div class="feature-image"></div>
+      <div class="feature-copy">
+        <p class="eyebrow">THE NORTHLINE STANDARD</p>
+        <h2>Buying a car should feel as considered as the car itself.</h2>
+        <p>Every vehicle is presented with the information you need to make a confident decision. From verified mileage to service history and flexible financing conversations, our specialists stay focused on the details.</p>
+        <div class="feature-list"><div><b>01</b><span>Verified vehicle history</span></div><div><b>02</b><span>Professional inspection</span></div><div><b>03</b><span>Flexible finance guidance</span></div></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-heading"><div><p class="eyebrow">WHY NORTHLINE</p><h2>A showroom built around clarity.</h2></div><p>No pressure. No vague listings. Just a better way to explore your next vehicle.</p></div>
+      <div class="about-grid"><article><span>01</span><h3>Curated inventory</h3><p>Focused selection rather than endless listings. Each vehicle has a reason to be here.</p></article><article><span>02</span><h3>Transparent details</h3><p>Pricing, mileage, specifications and availability are easy to find before you call.</p></article><article><span>03</span><h3>Human support</h3><p>When you're ready, connect directly with a specialist who knows the vehicle.</p></article></div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Let's find the right car.</h2><p>Tell us what you're looking for and a Northline specialist will get back to you.</p></div>
+      <form id="leadForm"><div class="form-row"><input name="name" placeholder="Your name" required><input name="phone" placeholder="Phone number" required></div><input name="car" id="leadCar" placeholder="Vehicle you're interested in"><textarea name="message" rows="4" placeholder="Tell us what you're looking for"></textarea><button class="button button-primary" type="submit">Request a callback <span>↗</span></button><p class="form-note" id="formNote"></p></form>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">N</span><span><strong>NORTHLINE</strong><small>MOTORS</small></span></div><p>Digital showroom demo · Cairo, Egypt</p><div><a href="#top">Back to top ↑</a></div></footer>
+
+  <div class="mobile-menu" id="mobileMenu" hidden><a href="#inventory">Inventory</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+
+  <dialog class="car-dialog" id="carDialog"><button class="dialog-close" id="dialogClose" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
