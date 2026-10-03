@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - car-showroom-v1
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: car-showroom
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: car-showroom/package-lock.json
+      - run: npm install
+      - run: npm test
+      - run: npm run build
